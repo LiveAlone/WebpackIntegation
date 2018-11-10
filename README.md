@@ -190,15 +190,20 @@ npm install babel-preset-stage-0 babel-runtime babel-preset-es2015 --save-dev
 # Vue router 路由指定方式 ``` npm install vue-router --save ``` 路由
 参考 docs 目录下  vue-router 路由插件
 
-# vueX 
+# vuex 应用状态管理, 类似支持全局对象 ``` npm install vuex --save ``` 
+1. vuex 状态发生了变化, 对应的模块也会同时发生对应的变化。 
+2. 不能直接修改 vue status, 通过 push commit mutation 方式，修改state
+3. 不同模块, 状态刷新支持
 
 # vue model state 拆分修改
 
 # Vue 组件化， 数值的传递方式
+1. Component 支持组件化， 传值方式, 组件化方式， 数据data 传递划分方式。
 
 # koa-router koa 跨域访问方式
 
-# less elementUI 组件支持
+# elementUI 组件支持 install ``` npm install element-ui --save ``` 提供 打包适用方式
+需要支持 url-loader 插件， ``` npm install url-loader --save-dev ```
 
 
 

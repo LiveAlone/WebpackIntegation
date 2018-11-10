@@ -6,7 +6,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
   mode: 'development',
   entry: {
-    vue: './src/app.js'
+    vue: './src/index.js'
   },
   resolve: {
     alias: {
@@ -20,13 +20,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      template: 'src/index.html'
     }),
     new VueLoaderPlugin()
   ],
   devtool: 'inline-source-map',
   output: {
-    filename: '[name].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   // 资源文件加载
@@ -49,6 +49,15 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }]
       }
     ]
   }
